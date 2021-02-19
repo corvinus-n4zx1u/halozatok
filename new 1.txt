@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Önéletrajz</title>
+</head>
+<body>
+    <h1>Önéletrajz</h1>
+    <h2>Alcím 1</h2>
+    <p>
+        <span>Lorem</span> ipsum dol<br>or sit amet, consectetur adipiscing elit. Ut faucibus tincidunt arcu et suscipit.
+        Phasellus non
+        lacus molestie, vestibulum nunc nec, lacinia purus. Duis mattis lectus et elit ornare congue. Morbi nec
+        porttitor nisi, ac aliquam augue. Donec aliquet enim non elementum auctor. Aenean faucibus nulla et ultrices
+        lacinia
+    </p>
+    <h2>Alcím 2</h2>
+    <p>
+        Mauris rhoncus, ex vel iaculis luctus, tellus tortor scelerisque lacus, eget semper lorem lorem volutpat quam.
+        Praesent in vehicula sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla urna,
+        at volutpat mi fermentum id. Mauris id imperdiet mauris, ullamcorper sodales tellus.
+    </p>
+    <a href="http://www.google.com" target="_blank">Ez a google oldala</a>
+    <p>Kedvenc ételeim:</p>
+    <div>
+        <ul>
+            <li>Egy</li>
+            <li>Kettő</li>
+            <li>Három</li>
+        </ul>
+        <p>Kedvenc könyveim:</p>
+        <ol>
+            <li>Egy</li>
+            <li>Kettő</li>
+            <li>Három</li>
+        </ol>
+    </div>
+    <img src="https://szoft1.comeback.hu/hajo/penguin.jpg" alt="ez egy pingvin">
+</body>
+</html>
