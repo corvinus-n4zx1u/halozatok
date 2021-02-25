@@ -1,0 +1,43 @@
+﻿body {
+    background: #EFC781;
+}
+
+h1 {
+    text-align: center;
+    color: #5A3B04;
+}
+
+h2 {
+    color: #5A3B04;
+}
+
+span {
+    font-weight: bold
+}
+
+div {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #5A3B04;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.tanulmanyok {
+    background: #EFD6AB;
+}
+
+a {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #5A3B04;
+    background-color: #5A3B04;
+    color: white;
+    font-weight: bold;
+}
+
+    a:hover {
+        background-color: #EFD6AB;
+        color: #5A3B04;
+        border: 1px solid #5A3B04;
+    }
