@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <script src="hetedik.js"></script>
     <title></title>
+
     <style>
         html, body {
             height: 100%;
@@ -12,12 +14,12 @@
         div {
             margin: 0px;
             /*border: 1px solid #248f98*/
-            padding:10px;
+            padding: 10px;
         }
 
         #külső {
             height: 90%;
-            display:flex;
+            display: flex;
             flex-direction: column;
         }
 
@@ -26,20 +28,19 @@
             font-weight: bold;
             background-color: #248f98;
             color: #d8edf0;
-            padding:20px;
-            border-radius:25px;
+            padding: 20px;
+            border-radius: 25px;
         }
 
         #középső {
             display: flex;
             flex-direction: row;
-            flex-grow:1;
+            flex-grow: 1;
         }
 
         #válaszok {
             flex-grow: 1;
             flex-shrink: 1;
-
         }
 
         #vezérlő {
@@ -50,7 +51,7 @@
 
         #kép {
             overflow: hidden;
-            flex-shrink:0;
+            flex-shrink: 0;
             flex-shrink: 0;
         }
 
@@ -72,23 +73,23 @@
             color: #d8edf0;
             padding: 20px;
             border-radius: 25px;
-            margin:10px;
+            margin: 10px;
         }
 
         .kattintható:hover {
             background-color: #bed5d5;
             color: #287674;
         }
+        /*
         .jó {
             background-color: #b3ffc3;
             color: #287674;
         }
+
         .rossz {
             background-color: #fdc6c6;
             color: #287674;
-        }
-
-
+        }*/
     </style>
 </head>
 <body>
@@ -99,17 +100,17 @@
 
         <div id="középső">
             <div id="válaszok">
-                <div id="válasz1" class="valasz kattintható jó">Válasz 1</div>
-                <div id="válasz2" class="valasz kattintható rossz">Válasz 2</div>
-                <div id="válasz3" class="valasz kattintható">Válasz 3</div>
+                <div id="válasz1" class="valasz kattintható" onclick="ellenorzes()">Válasz 1</div>
+                <div id="válasz2" class="valasz kattintható" onclick="ellenorzes()">Válasz 2</div>
+                <div id="válasz3" class="valasz kattintható" onclick="ellenorzes()">Válasz 3</div>
             </div>
-            <div id="kép">
-                <img id="kép1" src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" />
+            <div>
+                <img  id="kép">
             </div>
         </div>
         <div id="vezérlő">
-            <div class="gomb kattintható"">Vissza</div>
-            <div class="gomb kattintható">Előre</div>
+            <div onclick="vissza()" class="gomb kattintható">Vissza</div>
+            <div onclick="elore()" class="gomb kattintható">Előre</div>
         </div>
     </div>
 </body>
