@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <script src="hetedik.js"></script>
+    <script src="tizedik.js"></script>
     <title></title>
 
     <style>
@@ -80,7 +80,7 @@
             background-color: #bed5d5;
             color: #287674;
         }
-        /*
+        
         .jó {
             background-color: #b3ffc3;
             color: #287674;
@@ -89,7 +89,7 @@
         .rossz {
             background-color: #fdc6c6;
             color: #287674;
-        }*/
+        }
     </style>
 </head>
 <body>
@@ -100,17 +100,17 @@
 
         <div id="középső">
             <div id="válaszok">
-                <div id="válasz1" class="valasz kattintható" onclick="ellenorzes()">Válasz 1</div>
-                <div id="válasz2" class="valasz kattintható" onclick="ellenorzes()">Válasz 2</div>
-                <div id="válasz3" class="valasz kattintható" onclick="ellenorzes()">Válasz 3</div>
+                <div id="válasz1" class="valasz kattintható" onclick="választás(1)">Válasz 1</div>
+                <div id="válasz2" class="valasz kattintható" onclick="választás(2)">Válasz 2</div>
+                <div id="válasz3" class="valasz kattintható" onclick="választás(3)">Válasz 3</div>
             </div>
-            <div>
+            <div id="képkeret">
                 <img  id="kép">
             </div>
         </div>
         <div id="vezérlő">
-            <div onclick="vissza()" class="gomb kattintható">Vissza</div>
-            <div onclick="elore()" class="gomb kattintható">Előre</div>
+            <div class="gomb kattintható" id="visszagomb">Vissza</div>
+            <div class="gomb kattintható" id="eloregomb">Előre</div>
         </div>
     </div>
 </body>

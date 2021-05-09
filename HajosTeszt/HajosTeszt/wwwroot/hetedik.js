@@ -5,6 +5,12 @@
 
 var sorszam = 0;
 var kérdések;
+var hotList = [];          
+var questionsInHotList = 3;
+var displayedQuestion;     
+var numberOfQuestions;     
+var nextQuestion = 1;
+var timeoutHandler;
 
 
 function letöltés() {
@@ -26,10 +32,53 @@ function letöltésBefejeződött(d) {
     console.log(d)
     kérdések = d;
     kerdesMegjelenites(0)
+    timeoutHandler = setTimeout(előre, 3000);
+}
+
+function kérdésBetöltés(questionNumber, destination) {
+    fetch(`/questions/${questionNumber}`)
+        .then(
+            result => {
+                if (!result.ok) {
+                    console.error(`Hibás letöltés: ${response.status}`)
+                }
+                else {
+                    return result.json()
+                }
+            }
+        )
+        .then(
+            q => {
+                hotList[destination].question = q;
+                hotList[destination].goodAnswers = 0;
+                console.log(`A ${questionNumber}. kérdés letöltve a hot list ${destination}. helyére`)
+                if (displayedQuestion == undefined && destination == 0) { //!!!!!!!!!!!!!
+                    displayedQuestion = 0;
+                    kérdésMegjelenítés();
+                }
+            }
+        );
+}
+
+function init() {
+    for (var i = 0; i < questionsInHotList; i++) {
+        let q = {
+            question: {},
+            goodAnswers: 0
+        }
+        hotList[i] = q;
+    }
+
+    //Első kérdések letöltése
+    for (var i = 0; i < questionsInHotList; i++) {
+        kérdésBetöltés(nextQuestion, i);
+        nextQuestion++;
+    }
 }
 
     function kerdesMegjelenites() {
-        
+        let kérdés = hotList[displayedQuestion].question;            
+
         let kérdés_szöveg = document.getElementById("kérdés_szöveg");
         let elem = document.createElement("div");
         kérdés_szöveg.innerHTML = kérdések[sorszam].questionText
@@ -58,19 +107,17 @@ function vissza() {
     }
 }
 
-function elore() {
-    if (sorszam == 2) {
-        sorszam = 0;
-        letöltés();
-        
-    }
-    else {
-        sorszam = sorszam + 1;
-        letöltés();
-    }
+function előre() {
+    clearTimeout(timeoutHandler)
+    displayedQuestion++;
+    if (displayedQuestion == questionsInHotList) displayedQuestion = 0;
+    kérdésMegjelenítés()
 }
 
+
 function ellenorzes() {
+    document.getElementById(`válasz1`).style.pointerEvents = "none"
+
     let helyes = kérdések[sorszam].correctAnswer;
     console.log(helyes)
 
